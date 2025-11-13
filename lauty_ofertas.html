@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ofertas - LC Store</title>
+  <style>
+    :root {
+      --black: #000;
+      --white: #fff;
+      --gray-1: #111;
+      --gray-2: #e9e9e9;
+    }
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #111; }
+    header { background: var(--black); color: var(--white); }
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
+    .logo { font-weight: 800; font-size: 22px; }
+    .search { display: flex; align-items: center; gap: 8px; background: var(--white); border-radius: 999px; padding: 6px 12px; width: 520px; }
+    .search input { border: none; outline: none; width: 100%; }
+    .search button { background: transparent; border: none; cursor: pointer; }
+    nav.primary { background: var(--gray-1); }
+    nav.primary ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 8px 30px; justify-content: center; }
+    nav.primary a { color: var(--white); text-decoration: none; }
+    h2 { text-align: center; font-size: 1.2em; margin: 30px 0 20px; }
+    .products { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
+    .product { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 12px; text-align: center; width: 220px; }
+    .product img { width: 100%; border-radius: 4px; }
+    .badge { display: block; background: #ff0000; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
+    .price { margin-top: 6px; }
+    .price .old { color: #777; text-decoration: line-through; font-size: 13px; margin-right: 6px; }
+    .price .current { color: #111; font-weight: 700; }
+    footer { background: #000; color: #fff; text-align: center; padding: 14px 16px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">LC</div>
+    </div>
+    <nav class="primary" aria-label="Navegación principal">
+      <ul style="list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; justify-content: center;">
+        <li style="font-weight: bold; display: flex; gap: 32px;">
+          <a href="lauty_home.html">Inicio</a>
+          <a href="lauty_categoria.html">Productos</a>
+          <a href="lauty_ofertas.html">Sale</a>
+          <a href="curriculum.html">curriculum</a>
+          <a href="blog_personal.html">Blog</a>
+          <a href="lauty_preg_frec.html">Preguntas</a>
+          <a href="lauty_quienes.html">¿Quienes somos?</a>
+          <a href="lauty_login.html">Login</a>
+          <a href="curso.html">Curso</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h2>Ofertas</h2>
+  <div class="products">
+    <div class="product">
+      <span class="badge">40% OFF</span>
+      <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop" alt="Remera oferta" />
+      <h4>Remera Promo</h4>
+      <div class="price"><span class="old">$41.900</span><span class="current">$25.140</span></div>
+    </div>
+    <div class="product">
+      <span class="badge">30% OFF</span>
+      <img src="https://acdn-us.mitiendanube.com/stores/001/351/313/products/untitled-design-f1157ceb5e1db3ed7917201997449941-480-0.webp" alt="Hoodie oferta" />
+      <h4>Hoodie Promo</h4>
+      <div class="price"><span class="old">$79.900</span><span class="current">$55.930</span></div>
+    </div>
+    <div class="product">
+      <span class="badge">20% OFF</span>
+      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?q=80&w=800&auto=format&fit=crop" alt="Pantalón oferta" />
+      <h4>Jean Slim</h4>
+      <div class="price"><span class="old">$69.900</span><span class="current">$55.920</span></div>
+    </div>
+    <div class="product">
+      <span class="badge">50% OFF</span>
+      <img src="https://shop.diesel.com/on/demandware.static/-/Sites-diesel-master-catalog/default/dw9c5dd5c6/images/large/X08516_PR666_T8013_F.jpg" alt="Camisa oferta" />
+      <h4>Cinto Diesel</h4>
+      <div class="price"><span class="old">$59.900</span><span class="current">$29.950</span></div>
+    </div>
+    <div class="product">
+      <span class="badge">35% OFF</span>
+      <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Campera oferta" />
+      <h4>Campera Rustica</h4>
+      <div class="price"><span class="old">$99.900</span><span class="current">$64.935</span></div>
+    </div>
+    <div class="product">
+      <span class="badge">10% OFF</span>
+      <img src="https://th.bing.com/th/id/OIP.HtBzJPq02RWWb_9QzrfA-wHaHa?w=202&h=202&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Accesorio oferta" />
+      <h4>parras de motocross</h4>
+      <div class="price"><span class="old">$19.900</span><span class="current">$17.910</span></div>
+    </div>
+  </div>
+  <footer>
+    © 2025 LC Store. Todos los derechos reservados.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camisas - LC Store</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
+      .navbar { background: #000; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
+      .navbar-left { display: flex; align-items: center; gap: 30px; }
+      .logo { font-weight: 700; font-size: 22px; }
+      .search-box { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 999px; padding: 6px 12px; width: 520px; }
+      .search-box input { border: none; outline: none; width: 100%; }
+      .search-box button { background: transparent; border: none; cursor: pointer; }
+      .navbar-right { display: flex; align-items: center; gap: 20px; }
+      .nav-icon { display: flex; flex-direction: column; align-items: center; font-size: 12px; }
+      .nav-icon i { font-size: 16px; margin-bottom: 2px; }
+      .secondary-nav { background: #111; color: #fff; }
+      .secondary-nav ul { list-style: none; margin: 0; padding: 10px 30px; display: flex; gap: 20px; }
+      .secondary-nav a { color: #fff; text-decoration: none; }
+      .container { padding: 0 30px; }
+      .breadcrumb { margin: 12px 0 10px; font-size: 14px; color: #444; }
+      .breadcrumb ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
+      .breadcrumb li + li::before { content: ">"; color: #777; margin: 0 4px; }
+      .main { display: flex; }
+      .sidebar { width: 280px; background: #fff; padding: 20px; border-right: 1px solid #ddd; }
+      .sidebar .title { font-weight: 600; margin-bottom: 8px; }
+      .products { flex: 1; background: #fff; padding: 30px; display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 30px; }
+      .product { background: #f1f1f1; border-radius: 10px; padding: 15px; text-align: center; position: relative; }
+      .product img { width: 100%; border-radius: 8px; }
+      .price { display: flex; gap: 8px; justify-content: center; align-items: baseline; margin-top: 6px; }
+      .price .old { color: #777; text-decoration: line-through; font-size: 13px; }
+      .price .current { color: #111; font-weight: 700; }
+      .actions { margin-top: 10px; display: flex; gap: 8px; justify-content: center; }
+      .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #ccc; margin: 0 auto; }
+      .badge { position: absolute; top: 10px; left: 10px; background: #ff0000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+      /* Filtros específicos */
+      .filter-section { margin-bottom: 20px; }
+      .filter-section h4 { margin: 0 0 10px 0; font-size: 14px; }
+      .size-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+      .size-btn { padding: 6px 12px; border: 1px solid #000; background: #fff; border-radius: 4px; cursor: pointer; font-size: 12px; }
+      .size-btn.selected { background: #000; color: #fff; }
+      .color-options { display: grid; gap: 8px; }
+      .color-option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+      .color-option input[type="checkbox"] { margin: 0; }
+      footer { margin-top: 20px; background: #000; color: #fff; text-align: center; padding: 16px 20px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <div class="logo">LC</div>
+          <form class="search-box" action="#" method="get">
+            <input type="text" name="q" placeholder="¿Qué estás buscando?" />
+            <button type="submit">🔍</button>
+          </form>
+        </div>
+        <nav class="navbar-right" aria-label="Accesos rápidos">
+          <div class="nav-icon">
+            <i>💬</i>
+            <span>Ayuda</span>
+          </div>
+          <div class="nav-icon">
+            <i>👤</i>
+            <span>Mi cuenta</span>
+          </div>
+          <div class="nav-icon">
+            <i>🛒</i>
+            <span>Mi carrito</span>
+          </div>
+        </nav>
+      </div>
+      <nav class="secondary-nav" aria-label="Navegación principal">
+        <ul>
+        <a href="lauty_home.html">Inicio</a>
+        <a href="lauty_categoria.html">Productos</a>
+        <a href="lauty_ofertas.html">Sale</a>
+        <a href="curriculum.html">curriculum</a>
+        <a href="blog_personal.html">Blog</a>
+        <a href="lauty_preg_frec.html">Preguntas</a>
+        <a href="lauty_quienes.html">¿Quienes somos?</a>
+        <a href="curso.html">Curso</a>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="sidebar">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <ul>
+            <li><a href="lauty_home.html">Inicio</a></li>
+            <li>Camisas</li>
+          </ul>
+        </nav>
+        <div class="filter-section">
+          <h4>Filtrar por</h4>
+          <div class="filter-section">
+            <h4>Talle</h4>
+            <div class="size-buttons">
+              <button class="size-btn">S</button>
+              <button class="size-btn">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+              <button class="size-btn">XXL</button>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4>Color</h4>
+            <div class="color-options">
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="blanco" />
+                <span>Blanco</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="negro" />
+                <span>Negro</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="azul" />
+                <span>Azul</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="gris" />
+                <span>Gris</span>
+              </label>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4>Rango de precio</h4>
+            <div style="margin-top: 8px;">
+              <input type="range" min="0" max="80000" style="width: 100%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="flex:1;">
+        <div class="products">
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.A11frKATywfzFirx8A-5tAHaKe?w=139&h=196&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Camisa blanca" />
+            <h4>Camisa Oxford</h4>
+            <div class="color-swatch" style="background: #fff;"></div>
+            <div class="price"><div class="current">$45.900</div></div>
+          </div>
+          <div class="product">
+            <div class="badge">25% OFF</div>
+            <img src="https://th.bing.com/th/id/OIP.A11frKATywfzFirx8A-5tAHaKe?w=139&h=196&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Camisa negra" />
+            <h4>Camisa Slim Fit</h4>
+            <div class="color-swatch" style="background: #000;"></div>
+            <div class="price"><div class="old">$59.900</div><div class="current">$44.925</div></div>
+          </div>
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.A11frKATywfzFirx8A-5tAHaKe?w=139&h=196&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Camisa azul" />
+            <h4>Camisa Denim</h4>
+            <div class="color-swatch" style="background: #0066cc;"></div>
+            <div class="price"><div class="current">$52.500</div></div>
+          </div>
+          <div class="product">
+            <div class="badge">Sin stock</div>
+            <img src="https://images.unsplash.com/photo-1539533113208-f6df8cc8b543?q=80&w=800&auto=format&fit=crop" alt="Camisa gris" />
+            <h4>Camisa Oversize</h4>
+            <div class="color-swatch" style="background: #808080;"></div>
+            <div class="price"><div class="current">$48.900</div></div>
+          </div>
+          <div class="product">
+            <img src="https://th.bing.com/th/id/OIP.7JRLpJROyqdiTlZtzjzAXwHaKe?w=134&h=190&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Camisa casual" />
+            <h4>Camisa Casual</h4>
+            <div class="color-swatch" style="background: #8B4513;"></div>
+            <div class="price"><div class="current">$41.900</div></div>
+          </div>
+          <div class="product">
+            <div class="badge">Envío gratis</div>
+            <img src="https://th.bing.com/th/id/OIP.7JRLpJROyqdiTlZtzjzAXwHaKe?w=134&h=190&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Camisa formal" />
+            <h4>Camisa Formal</h4>
+            <div class="color-swatch" style="background: #fff;"></div>
+            <div class="price"><div class="current">$65.000</div></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      © 2025 LC Store. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>
