@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crear cuenta | LC Store</title>
+  <title>Iniciar sesión | LC Store</title>
   <style>
     :root {
       --color-bg: #ffffff;
@@ -122,6 +122,7 @@
     }
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
     input[type="password"] {
       width: 100%;
       padding: 8px;
@@ -198,14 +199,14 @@
         <li><a href="blog_personal.html">Blog</a></li>
         <li><a href="lauty_preg_frec.html">Preguntas</a></li>
         <li><a href="lauty_quienes.html">¿Quienes somos?</a></li>
-        <li><a href="lauty_login.html">Login</a></li>
+        <li><a href="lauty_login.php">Login</a></li>
         <li><a href="curso.html">Curso</a></li>
       </ul>
     </nav>
-    <h1>Crear cuenta</h1>
+    <h1>Login</h1>
   </header>
-  <form method="post" action="php/crear_cuenta.php">
-    <h2>Crear cuenta</h2>
+  <form method="post" action="php/registrarse.php">
+    <h2>Iniciar sesión</h2>
     <?php
     session_start();
     if (isset($_SESSION['flash_errors'])) {
@@ -223,19 +224,16 @@
       unset($_SESSION['flash_success']);
     }
     ?>
-    <label for="full_name">Nombre</label>
-    <input type="text" id="full_name" name="full_name" placeholder="ej: María Perez" required maxlength="120" />
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" placeholder="ej: tunombre@email.com" required maxlength="160" />
+    <input type="email" id="email" name="email" placeholder="tu@email.com" required maxlength="160" />
     <label for="password">Contraseña</label>
     <input type="password" id="password" name="password" placeholder="Contraseña" required maxlength="50" />
-    <label for="password2">Confirmar Contraseña</label>
-    <input type="password" id="password2" name="password2" placeholder="Confirmar Contraseña" required maxlength="50" />
-    <button type="submit">CREAR CUENTA</button>
-    <div class="alt">¿Ya tenés cuenta? <a href="lauty_login.html">Iniciá sesión</a></div>
+    <button type="submit">INGRESAR</button>
+    <div class="alt">¿No tenés cuenta? <a href="lauty_registro.html">Crear cuenta</a></div>
   </form>
   <footer>
     <p>© 2025 LC Store. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
+

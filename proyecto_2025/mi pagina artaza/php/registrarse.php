@@ -8,14 +8,23 @@ function redirect(string $path) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-  redirect('/lauty_login.html');
+  redirect('../lauty_login.php');
 }
 
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 
-if (!filter_var($email, FILTER_VALIDATE_EMAIL) || $password === '') {
-  redirect('/lauty_login.html');
+$errors = [];
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  $errors[] = 'Email inválido';
+}
+if ($password === '') {
+  $errors[] = 'La contraseña es requerida';
+}
+
+if ($errors) {
+  $_SESSION['flash_errors'] = $errors;
+  redirect('../lauty_login.php');
 }
 
 try {
@@ -27,13 +36,17 @@ try {
   $stmt->close();
 
   if (!$user || !password_verify($password, $user['password_hash'])) {
-    redirect('/lauty_login.html');
+    $_SESSION['flash_errors'] = ['Email o contraseña incorrectos'];
+    redirect('../lauty_login.php');
   }
 
   $_SESSION['user_id'] = (int)$user['id'];
   $_SESSION['user_name'] = $user['full_name'] ?: $user['email'];
   $_SESSION['user_email'] = $user['email'];
-  redirect('/');
+  $_SESSION['flash_success'] = 'Sesión iniciada correctamente';
+  redirect('../lauty_home.html');
 } catch (Throwable $e) {
-  redirect('/lauty_login.html');
+  error_log('Error en login: ' . $e->getMessage());
+  $_SESSION['flash_errors'] = ['Error al iniciar sesión. Por favor, intenta nuevamente.'];
+  redirect('../lauty_login.php');
 }

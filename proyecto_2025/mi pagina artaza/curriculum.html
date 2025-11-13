@@ -1,203 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es-AR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Currículum Vitae – Lautaro Gabriel Corimayo Flores</title>
-    <meta name="description" content="CV semántico de Lautaro Gabriel Corimayo Flores: contacto, educación, cursos, experiencia laboral y aptitudes." />
-    <meta property="og:title" content="Currículum – Lautaro Gabriel Corimayo Flores" />
-    <meta property="og:description" content="Contacto, educación, cursos, experiencia y aptitudes." />
-    <meta name="format-detection" content="telephone=no" />
-    <style>
-      :root {
-        --bg: #f8f8f8;
-        --card: #181818;
-        --ink: #e0e0e0;
-        --muted: #ffffff;
-        --accent: #ffffff;
-        --chip: #000000;
-      }
-      * { box-sizing: border-box; }
-      html, body { height: 100%; }
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: var(--bg);
-        color: var(--ink);
-      }
-      .wrap {
-        max-width: 900px;
-        margin: auto;
-        padding: 2rem 1rem 3rem;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currículum Vitae – Lautaro Gabriel Corimayo Flores | LC Store</title>
+  <meta name="description" content="CV semántico de Lautaro Gabriel Corimayo Flores: contacto, educación, cursos, experiencia laboral y aptitudes." />
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #000000;
+      --color-surface-light: #111111;
+      --color-text: #000000;
+      --color-text-light: #ffffff;
+      --color-text-muted: #666666;
+      --color-accent: #000000;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --font-family: 'Segoe UI', Arial, sans-serif;
+      --font-size-base: 16px;
+      --border-radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+    header {
+      background: var(--color-surface);
+      color: var(--color-text-light);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-sm) var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--color-text-light);
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg);
+      border-radius: 999px;
+      padding: 6px 12px;
+      max-width: 520px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: var(--font-size-base);
+    }
+    .search button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    nav.primary {
+      background: var(--color-surface-light);
+      padding: var(--spacing-xs) 0;
+    }
+    nav.primary ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav.primary a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-weight: bold;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius);
+      transition: background 0.2s;
+    }
+    nav.primary a:hover {
+      background: #222222;
+    }
+    header h1 {
+      text-align: center;
+      padding: var(--spacing-sm);
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-text-light);
+    }
+    .wrap {
+      max-width: 900px;
+      margin: auto;
+      padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-xl);
+    }
+    header.site {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md) var(--spacing-sm);
+      background: var(--color-bg);
+      border: 1px solid #eee;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-sm);
+    }
+    header.site img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #eee;
+    }
+    header.site h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-text);
+      font-weight: bold;
+    }
+    header.site p.role {
+      margin: 0;
+      color: var(--color-text-muted);
+      font-size: 1rem;
+    }
+    main {
+      margin-top: var(--spacing-sm);
+    }
+    section, article, aside {
+      background: var(--color-bg);
+      border: 1px solid #eee;
+      border-radius: var(--border-radius);
+      padding: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: var(--color-text);
+      font-weight: bold;
+    }
+    .grid {
+      display: grid;
+      gap: var(--spacing-xs);
+    }
+    .two {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xs);
+    }
+    .list {
+      margin: var(--spacing-xs) 0 0;
+      padding-left: var(--spacing-sm);
+    }
+    .meta {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+    }
+    dl { margin: 0; }
+    dt { color: var(--color-text-muted); }
+    dd { margin: 0 0 0 var(--spacing-xs); }
+    address { font-style: normal; }
+    a[href^="mailto:"], a[href^="tel:"] {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    a[href^="mailto:"]:hover, a[href^="tel:"]:hover {
+      text-decoration: underline;
+    }
+    footer.site {
+      text-align: center;
+      background: var(--color-surface);
+      color: var(--color-text-light);
+      margin-top: var(--spacing-lg);
+      font-size: 0.9rem;
+      padding: var(--spacing-md);
+    }
+    @media (max-width: 768px) {
+      .two {
+        grid-template-columns: 1fr;
       }
       header.site {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 1.2rem 1rem;
-        background: var(--card);
-        border-radius: 8px;
-        margin-bottom: 1rem;
-      }
-      header.site img {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        background: #222;
-      }
-      header.site h1 {
-        margin: 0;
-        font-size: 1.5rem;
-        color: var(--accent);
-        font-weight: bold;
-      }
-      header.site p.role {
-        margin: 0;
-        color: var(--muted);
-        font-size: 1rem;
-      }
-      main {
-        margin-top: 1rem;
-      }
-      section, article, aside {
-        background: var(--card);
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-      }
-      h2 {
-        margin-top: 0;
-        font-size: 1.1rem;
-        color: var(--accent);
-        font-weight: bold;
-      }
-      .grid { display: grid; gap: .5rem; }
-      .two { grid-template-columns: 1fr 1fr; gap: .5rem; }
-      .list { margin: .5rem 0 0; padding-left: 1rem; }
-      .meta { color: var(--muted); font-size: .95rem; }
-      dl { margin: 0; }
-      dt { color: var(--muted); }
-      dd { margin: 0 0 0 .5rem; }
-      address { font-style: normal; }
-      a[href^="mailto:"], a[href^="tel:"] { color: var(--accent); }
-      footer.site {
+        flex-direction: column;
         text-align: center;
-        color: #000000;
-        margin-top: 2rem;
-        font-size: .95rem;
-        padding-top: 1rem;
-        border-top: 1px solid #222;
       }
-    </style>
-  </head>
-  <body>
-    <nav style="display: flex; justify-content: center; background: #000; padding: 10px 0; gap: 40px; margin-bottom: 1.5rem;">
-        <a href="lauty_home.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">Inicio</a>
-        <a href="lauty_categoria.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">Productos</a>
-        <a href="lauty_ofertas.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">Sale</a>
-        <a href="curriculum.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">curriculum</a>
-        <a href="blog_personal.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">Blog</a>
-        <a href="lauty_preg_frec.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">Preguntas</a>
-        <a href="lauty_quienes.html" style="color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.2s; padding: .5rem 1rem; border-radius: 6px;">¿Quienes somos?</a></nav>
-    <div class="wrap">
-      <header class="site" style="display: flex; align-items: center; gap: 2rem;">
-        <img src="imagenes_pag.art/lau3.jpeg" alt="Foto de perfil de Lautaro Gabriel Corimayo Flores" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,.25);">
-        <div>
-          <h1>LAUTARO GABRIEL CORIMAYO FLORES</h1>
-          <p class="role" aria-label="puesto o interés">Currículum Vitae</p>
-        </div>
-      </header>
-
-      <main>
-        <section id="contacto" aria-labelledby="h-contacto">
-          <h2 id="h-contacto">Contacto</h2>
-          <address>
-            <div class="grid two">
-              <div>
-                <strong>Teléfono:</strong>
-                <div><a href="tel:+543874856694">+54 387 485 6694</a></div>
-              </div>
-              <div>
-                <strong>Email:</strong>
-                <div><a href="mailto:lautargab@gmail.com">lautargab@gmail.com</a></div>
-              </div>
-              <div>
-                <strong>Dirección:</strong>
-                <div>Pje José Lemos 915, B° Lamadrid, Salta Capital</div>
-              </div>
-            </div>
-          </address>
-        </section>
-
-        <section id="info" aria-labelledby="h-info">
-          <h2 id="h-info">Información personal</h2>
-          <dl>
-            <dt>DNI</dt><dd>47.609.147</dd>
-            <dt>Fecha de nacimiento</dt><dd><time datetime="2006-12-05">5 de diciembre de 2006</time></dd>
-            <dt>Lugar de nacimiento</dt><dd>Salta, Argentina</dd>
-            <dt>Disponibilidad horaria</dt><dd>Full Time</dd>
-            <dt>Estado civil</dt><dd>Soltero</dd>
-          </dl>
-        </section>
-
-        <section id="educacion" aria-labelledby="h-educacion">
-          <h2 id="h-educacion">Educación</h2>
-          <ul class="list" aria-label="estudios">
-            <li>Primario – completo.</li>
-            <li>Secundario – cursando en <em>Escuela Técnica N.º 3139 Gral. M. M. de Güemes</em>.</li>
-          </ul>
-        </section>
-
-        <section id="cursos" aria-labelledby="h-cursos">
-          <h2 id="h-cursos">Cursos realizados</h2>
-          <ul class="list">
-            <li>Curso CISCO Academy.</li>
-            <li>Curso de Office Básico.</li>
-            <li>Curso de CSS.</li>
-          </ul>
-        </section>
-
-        <section id="experiencia" aria-labelledby="h-experiencia">
-          <h2 id="h-experiencia">Experiencia laboral</h2>
-          <article>
-            <header>
-              <h3 class="meta">Ayudante en colonia de vacaciones</h3>
-            </header>
-            <p>Asistencia general en actividades recreativas y cuidado de participantes.</p>
-          </article>
-          <article>
-            <header>
-              <h3 class="meta">Ayudante de guardavidas</h3>
-            </header>
-            <p>Apoyo en vigilancia de pileta y cumplimiento de normas de seguridad.</p>
-          </article>
-        </section>
-
-        <aside id="aptitudes" aria-labelledby="h-aptitudes">
-          <h2 id="h-aptitudes">Aptitudes</h2>
-          <ul class="list">
-            <li>Trabajo en equipo.</li>
-            <li>Buena predisposición y adaptabilidad laboral.</li>
-            <li>Responsabilidad, puntualidad y eficiencia.</li>
-            <li>Manejo de herramientas manuales y eléctricas.</li>
-          </ul>
-        </aside>
-
-        <article id="carta" aria-labelledby="h-carta">
-          <h2 id="h-carta">Carta de presentación</h2>
-          <p>A la atención del Departamento de Diseño Web:</p>
-          <p>Me dirijo a ustedes en relación con la vacante disponible en el área de diseño de páginas web. Estoy convencido de que mi incorporación a su equipo sería una gran aportación, especialmente en el taller de desarrollo y diseño con CSS.</p>
-          <p>Soy una persona con amplia experiencia en trabajar bajo presión y me caracterizo por mi capacidad de organización y adaptabilidad a las demandas del entorno de desarrollo web. Mi enfoque centrado en la productividad y la mejora continua me permite optimizar tanto mis procesos como los de mi equipo, generando resultados eficientes y de alta calidad.</p>
-          <p>Además, cuento con habilidades sólidas en la resolución de problemas, siendo capaz de reaccionar con rapidez y efectividad ante situaciones inesperadas que pueden surgir durante el diseño y desarrollo de sitios web. Mis conocimientos en CSS, junto con mi fortaleza emocional y pasión por el diseño, me han permitido adquirir la experiencia necesaria para enfrentar los desafíos que el puesto requiere.</p>
-          <p>Adjunto mi currículum vitae para su consideración y quedo a su disposición para cualquier información adicional o la posibilidad de concertar una entrevista. Agradezco su tiempo y la oportunidad de postularme a esta vacante.</p>
-          <p>Saludos cordiales,<br> <strong>Lautaro Gabriel Corimayo Flores</strong></p>
-        </article>
-      </main>
-
-      <footer class="site">
-    <p>© 2025 – Bl de Lautaro Corimayo</p>
-      </footer>
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search {
+        max-width: 100%;
+      }
+      nav.primary ul {
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">LC</div>
+      <form class="search" action="#" method="get">
+        <input type="text" name="q" placeholder="Buscar productos..." />
+        <button type="submit" title="Buscar">🔍</button>
+      </form>
     </div>
-  </body>
+    <nav class="primary" aria-label="Navegación principal">
+      <ul>
+        <li><a href="lauty_home.html">Inicio</a></li>
+        <li><a href="lauty_categoria.html">Productos</a></li>
+        <li><a href="lauty_ofertas.html">Sale</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="blog_personal.html">Blog</a></li>
+        <li><a href="lauty_preg_frec.html">Preguntas</a></li>
+        <li><a href="lauty_quienes.html">¿Quienes somos?</a></li>
+        <li><a href="lauty_login.html">Login</a></li>
+        <li><a href="curso.html">Curso</a></li>
+      </ul>
+    </nav>
+    <h1>Curriculum</h1>
+  </header>
+  <div class="wrap">
+    <header class="site">
+      <img src="imagenes_pag.art/lau3.jpeg" alt="Foto de perfil de Lautaro Gabriel Corimayo Flores" />
+      <div>
+        <h1>LAUTARO GABRIEL CORIMAYO FLORES</h1>
+        <p class="role" aria-label="puesto o interés">Currículum Vitae</p>
+      </div>
+    </header>
+
+    <main>
+      <section id="contacto" aria-labelledby="h-contacto">
+        <h2 id="h-contacto">Contacto</h2>
+        <address>
+          <div class="grid two">
+            <div>
+              <strong>Teléfono:</strong>
+              <div><a href="tel:+543874856694">+54 387 485 6694</a></div>
+            </div>
+            <div>
+              <strong>Email:</strong>
+              <div><a href="mailto:lautargab@gmail.com">lautargab@gmail.com</a></div>
+            </div>
+            <div>
+              <strong>Dirección:</strong>
+              <div>Pje José Lemos 915, B° Lamadrid, Salta Capital</div>
+            </div>
+          </div>
+        </address>
+      </section>
+
+      <section id="info" aria-labelledby="h-info">
+        <h2 id="h-info">Información personal</h2>
+        <dl>
+          <dt>DNI</dt><dd>47.609.147</dd>
+          <dt>Fecha de nacimiento</dt><dd><time datetime="2006-12-05">5 de diciembre de 2006</time></dd>
+          <dt>Lugar de nacimiento</dt><dd>Salta, Argentina</dd>
+          <dt>Disponibilidad horaria</dt><dd>Full Time</dd>
+          <dt>Estado civil</dt><dd>Soltero</dd>
+        </dl>
+      </section>
+
+      <section id="educacion" aria-labelledby="h-educacion">
+        <h2 id="h-educacion">Educación</h2>
+        <ul class="list" aria-label="estudios">
+          <li>Primario – completo.</li>
+          <li>Secundario – cursando en <em>Escuela Técnica N.º 3139 Gral. M. M. de Güemes</em>.</li>
+        </ul>
+      </section>
+
+      <section id="cursos" aria-labelledby="h-cursos">
+        <h2 id="h-cursos">Cursos realizados</h2>
+        <ul class="list">
+          <li>Curso CISCO Academy.</li>
+          <li>Curso de Office Básico.</li>
+          <li>Curso de CSS.</li>
+        </ul>
+      </section>
+
+      <section id="experiencia" aria-labelledby="h-experiencia">
+        <h2 id="h-experiencia">Experiencia laboral</h2>
+        <article>
+          <header>
+            <h3 class="meta">Ayudante en colonia de vacaciones</h3>
+          </header>
+          <p>Asistencia general en actividades recreativas y cuidado de participantes.</p>
+        </article>
+        <article>
+          <header>
+            <h3 class="meta">Ayudante de guardavidas</h3>
+          </header>
+          <p>Apoyo en vigilancia de pileta y cumplimiento de normas de seguridad.</p>
+        </article>
+      </section>
+
+      <aside id="aptitudes" aria-labelledby="h-aptitudes">
+        <h2 id="h-aptitudes">Aptitudes</h2>
+        <ul class="list">
+          <li>Trabajo en equipo.</li>
+          <li>Buena predisposición y adaptabilidad laboral.</li>
+          <li>Responsabilidad, puntualidad y eficiencia.</li>
+          <li>Manejo de herramientas manuales y eléctricas.</li>
+        </ul>
+      </aside>
+
+      <article id="carta" aria-labelledby="h-carta">
+        <h2 id="h-carta">Carta de presentación</h2>
+        <p>A la atención del Departamento de Diseño Web:</p>
+        <p>Me dirijo a ustedes en relación con la vacante disponible en el área de diseño de páginas web. Estoy convencido de que mi incorporación a su equipo sería una gran aportación, especialmente en el taller de desarrollo y diseño con CSS.</p>
+        <p>Soy una persona con amplia experiencia en trabajar bajo presión y me caracterizo por mi capacidad de organización y adaptabilidad a las demandas del entorno de desarrollo web. Mi enfoque centrado en la productividad y la mejora continua me permite optimizar tanto mis procesos como los de mi equipo, generando resultados eficientes y de alta calidad.</p>
+        <p>Además, cuento con habilidades sólidas en la resolución de problemas, siendo capaz de reaccionar con rapidez y efectividad ante situaciones inesperadas que pueden surgir durante el diseño y desarrollo de sitios web. Mis conocimientos en CSS, junto con mi fortaleza emocional y pasión por el diseño, me han permitido adquirir la experiencia necesaria para enfrentar los desafíos que el puesto requiere.</p>
+        <p>Adjunto mi currículum vitae para su consideración y quedo a su disposición para cualquier información adicional o la posibilidad de concertar una entrevista. Agradezco su tiempo y la oportunidad de postularme a esta vacante.</p>
+        <p>Saludos cordiales,<br> <strong>Lautaro Gabriel Corimayo Flores</strong></p>
+      </article>
+    </main>
+
+    <footer class="site">
+      <p>© 2025 LC Store. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</body>
 </html>

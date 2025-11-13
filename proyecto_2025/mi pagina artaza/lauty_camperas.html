@@ -1,92 +1,183 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Camperas - LC Store</title>
-    <style>
-      body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
-      .navbar { background: #000; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
-      .navbar-left { display: flex; align-items: center; gap: 30px; }
-      .logo { font-weight: 700; font-size: 22px; }
-      .search-box { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 999px; padding: 6px 12px; width: 520px; }
-      .search-box input { border: none; outline: none; width: 100%; }
-      .search-box button { background: transparent; border: none; cursor: pointer; }
-      .navbar-right { display: flex; align-items: center; gap: 20px; }
-      .nav-icon { display: flex; flex-direction: column; align-items: center; font-size: 12px; }
-      .nav-icon i { font-size: 16px; margin-bottom: 2px; }
-      .secondary-nav { background: #111; color: #fff; }
-      .secondary-nav ul { list-style: none; margin: 0; padding: 10px 30px; display: flex; gap: 20px; }
-      .secondary-nav a { color: #fff; text-decoration: none; }
-      .container { padding: 0 30px; }
-      .breadcrumb { margin: 12px 0 10px; font-size: 14px; color: #444; }
-      .breadcrumb ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
-      .breadcrumb li + li::before { content: ">"; color: #777; margin: 0 4px; }
-      .main { display: flex; }
-      .sidebar { width: 280px; background: #fff; padding: 20px; border-right: 1px solid #ddd; }
-      .sidebar .title { font-weight: 600; margin-bottom: 8px; }
-      .products { flex: 1; background: #fff; padding: 30px; display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 30px; }
-      .product { background: #f1f1f1; border-radius: 10px; padding: 15px; text-align: center; position: relative; }
-      .product img { width: 100%; border-radius: 8px; }
-      .price { display: flex; gap: 8px; justify-content: center; align-items: baseline; margin-top: 6px; }
-      .price .old { color: #777; text-decoration: line-through; font-size: 13px; }
-      .price .current { color: #111; font-weight: 700; }
-      .actions { margin-top: 10px; display: flex; gap: 8px; justify-content: center; }
-      .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #ccc; margin: 0 auto; }
-      .badge { position: absolute; top: 10px; left: 10px; background: #ff0000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
-      /* Filtros específicos */
-      .filter-section { margin-bottom: 20px; }
-      .filter-section h4 { margin: 0 0 10px 0; font-size: 14px; }
-      .size-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
-      .size-btn { padding: 6px 12px; border: 1px solid #000; background: #fff; border-radius: 4px; cursor: pointer; font-size: 12px; }
-      .size-btn.selected { background: #000; color: #fff; }
-      .color-options { display: grid; gap: 8px; }
-      .color-option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
-      .color-option input[type="checkbox"] { margin: 0; }
-      footer { margin-top: 20px; background: #000; color: #fff; text-align: center; padding: 16px 20px; }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="navbar">
-        <div class="navbar-left">
-          <div class="logo">LC</div>
-          <form class="search-box" action="#" method="get">
-            <input type="text" name="q" placeholder="¿Qué estás buscando?" />
-            <button type="submit">🔍</button>
-          </form>
-        </div>
-        <nav class="navbar-right" aria-label="Accesos rápidos">
-          <div class="nav-icon">
-            <i>💬</i>
-            <span>Ayuda</span>
-          </div>
-          <div class="nav-icon">
-            <i>👤</i>
-            <span>Mi cuenta</span>
-          </div>
-          <div class="nav-icon">
-            <i>🛒</i>
-            <span>Mi carrito</span>
-          </div>
-        </nav>
-      </div>
-      <nav class="secondary-nav" aria-label="Navegación principal">
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camperas | LC Store</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-surface: #000000;
+      --color-surface-light: #111111;
+      --color-text: #000000;
+      --color-text-light: #ffffff;
+      --color-text-muted: #666666;
+      --color-accent: #000000;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --font-family: 'Segoe UI', Arial, sans-serif;
+      --font-size-base: 16px;
+      --border-radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+    }
+    header {
+      background: var(--color-surface);
+      color: var(--color-text-light);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-sm) var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--color-text-light);
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg);
+      border-radius: 999px;
+      padding: 6px 12px;
+      max-width: 520px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: var(--font-size-base);
+    }
+    .search button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    nav.primary {
+      background: var(--color-surface-light);
+      padding: var(--spacing-xs) 0;
+    }
+    nav.primary ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav.primary a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-weight: bold;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius);
+      transition: background 0.2s;
+    }
+    nav.primary a:hover {
+      background: #222222;
+    }
+    header h1 {
+      text-align: center;
+      padding: var(--spacing-sm);
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .container { padding: 0 30px; }
+    .breadcrumb { margin: 12px 0 10px; font-size: 14px; color: #444; }
+    .breadcrumb ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
+    .breadcrumb li + li::before { content: ">"; color: #777; margin: 0 4px; }
+    .breadcrumb a { color: #444; text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .main { display: flex; }
+    .sidebar { width: 280px; background: #fff; padding: 20px; border-right: 1px solid #ddd; }
+    .sidebar .title { font-weight: 600; margin-bottom: 8px; }
+    .products { flex: 1; background: #fff; padding: 30px; display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 30px; }
+    .product { background: #f1f1f1; border-radius: 10px; padding: 15px; text-align: center; position: relative; }
+    .product img { width: 100%; border-radius: var(--border-radius); }
+    .price { display: flex; gap: 8px; justify-content: center; align-items: baseline; margin-top: 6px; }
+    .price .old { color: #777; text-decoration: line-through; font-size: 13px; }
+    .price .current { color: #111; font-weight: 700; }
+    .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #ccc; margin: 0 auto; }
+    .badge { position: absolute; top: 10px; left: 10px; background: #ff0000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+    .filter-section { margin-bottom: 20px; }
+    .filter-section h4 { margin: 0 0 10px 0; font-size: 14px; }
+    .size-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+    .size-btn { padding: 6px 12px; border: 1px solid #000; background: #fff; border-radius: 4px; cursor: pointer; font-size: 12px; }
+    .size-btn.selected { background: #000; color: #fff; }
+    .color-options { display: grid; gap: 8px; }
+    .color-option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+    .color-option input[type="checkbox"] { margin: 0; }
+    footer {
+      background: var(--color-surface);
+      color: var(--color-text-light);
+      text-align: center;
+      padding: var(--spacing-sm);
+      margin-top: var(--spacing-xl);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search {
+        max-width: 100%;
+      }
+      .main { flex-direction: column; }
+      .sidebar { border-right: none; border-bottom: 1px solid #ddd; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="logo">LC</div>
+      <form class="search" action="#" method="get">
+        <input type="text" name="q" placeholder="Buscar productos..." />
+        <button type="submit" title="Buscar">🔍</button>
+      </form>
+    </div>
+    <nav class="primary" aria-label="Navegación principal">
+      <ul>
+        <li><a href="lauty_home.html">Inicio</a></li>
+        <li><a href="lauty_categoria.html">Productos</a></li>
+        <li><a href="lauty_ofertas.html">Sale</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="blog_personal.html">Blog</a></li>
+        <li><a href="lauty_preg_frec.html">Preguntas</a></li>
+        <li><a href="lauty_quienes.html">¿Quienes somos?</a></li>
+        <li><a href="lauty_login.html">Login</a></li>
+        <li><a href="curso.html">Curso</a></li>
+      </ul>
+    </nav>
+    <h1>Camperas</h1>
+  </header>
+  <main class="main">
+    <div class="sidebar">
+      <nav class="breadcrumb" aria-label="Ruta de navegación">
         <ul>
-        <a href="lauty_home.html">Inicio</a>  
-       <a href="lauty_categoria.html">Productos</a>
-        <a href="lauty_ofertas.html">Sale</a>
-        <a href="curriculum.html">curriculum</a>
-        <a href="blog_personal.html">Blog</a>
-        <a href="lauty_preg_frec.html">Preguntas</a>
-        <a href="lauty_quienes.html">¿Quienes somos?</a>
-        <a href="curso.html">Curso</a> 
+          <li><a href="lauty_home.html">Inicio</a></li>
+          <li>Camperas</li>
         </ul>
       </nav>
-    </header>
-    <main class="main">
-      <div class="sidebar">
-        <nav class="breadcrumb" aria-label="Ruta de navegación">
-        </nav>
         <div class="filter-section">
           <h4>Filtrar por</h4>
           <div class="filter-section">
@@ -184,7 +275,7 @@
       </div>
     </main>
     <footer>
-      © 2025 LC Store. Todos los derechos reservados.
+      <p>© 2025 LC Store. Todos los derechos reservados.</p>
     </footer>
   </body>
 </html>

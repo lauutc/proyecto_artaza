@@ -1,46 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiénes Somos | Locoste</title>
-  <link rel="icon" type="image/jpeg" href="imagenes_pag.art/campera.jpg">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Quiénes Somos? | LC Store</title>
   <style>
     :root {
-      --bg-start: #ffffff;
-      --bg-end: #ffffff;
-      --surface: #000000;
-      --surface-2: #000000;
-      --text: #ffffff;
-      --text-muted: #ffffff;
-      --line: #000000;
-      --shadow-1: rgba(0, 0, 0, 0.2);
-      --shadow-2: rgba(0, 0, 0, 0.35);
-      --hover-text: #000000;
-      --accent: #000000;
+      --color-bg: #ffffff;
+      --color-surface: #000000;
+      --color-text: #ffffff;
+      --color-text-muted: #ffffff;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --font-family: 'Segoe UI', Arial, sans-serif;
+      --font-size-base: 16px;
+      --border-radius: 8px;
     }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
-      color: var(--text);
-      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
       margin: 0;
       padding: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: var(--color-surface);
+      padding: var(--spacing-sm) 0;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius);
+      transition: color 0.2s, background 0.2s;
+    }
+    nav a:hover {
+      color: #ffffff;
+      background: #222222;
     }
     header {
       background: rgba(0, 0, 0, 0.95);
       padding: 40px 0 20px 0;
       text-align: center;
-      box-shadow: 0 2px 8px var(--shadow-2);
-      position: relative;
-    }
-    .logo {
-      width: 100px;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px var(--shadow-2);
-      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
     .brand {
-      color: var(--text);
+      color: var(--color-text);
       font-size: 2.7em;
       font-weight: bold;
       letter-spacing: 2px;
@@ -48,36 +65,18 @@
       display: block;
       margin-top: 10px;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #090909;
-      padding: 12px 0;
-      gap: 40px;
-      box-shadow: 0 2px 8px var(--shadow-1);
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1em;
-      padding: 8px 18px;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
-      position: relative;
-    }
     main {
       max-width: 700px;
       margin: 50px auto 30px auto;
-      background: var(--surface);
+      background: var(--color-surface);
       border-radius: 18px;
-      box-shadow: 0 8px 32px var(--shadow-2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
       padding: 45px 35px 35px 35px;
       position: relative;
       z-index: 1;
     }
     h2 {
-      color: var(--text);
+      color: var(--color-text);
       margin-bottom: 25px;
       font-size: 2.2em;
       letter-spacing: 1px;
@@ -85,20 +84,20 @@
       text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     }
     h3 {
-      color: var(--text);
+      color: var(--color-text);
       font-size: 1.25em;
       margin: 18px 0 10px 0;
       letter-spacing: 0.5px;
     }
     .about-section {
-      color: var(--text);
+      color: var(--color-text);
       font-size: 1.18em;
       line-height: 1.8em;
       margin-bottom: 22px;
       text-align: justify;
     }
     .about-highlight {
-      color: var(--text);
+      color: var(--color-text);
       font-weight: bold;
       font-size: 1.1em;
     }
@@ -113,59 +112,58 @@
       list-style: none;
     }
     ul li:before {
-      content: '\f058';
-      font-family: 'Font Awesome 6 Free';
-      font-weight: 900;
-      color: var(--text-muted);
+      content: '✓';
+      color: var(--color-text-muted);
       position: absolute;
       left: 0;
       top: 2px;
       font-size: 1em;
+      font-weight: bold;
     }
     footer {
-      background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface) 100%);
-      color: var(--text-muted);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
       text-align: center;
       padding: 22px 0 12px 0;
       font-size: 0.98em;
       letter-spacing: 1px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid #333333;
       margin-top: 40px;
     }
     .footer-social {
       margin-bottom: 10px;
     }
     .footer-social a {
-      color: var(--text-muted);
+      color: var(--color-text-muted);
       margin: 0 10px;
       font-size: 1.3em;
       transition: color 0.2s;
+      text-decoration: none;
     }
     .footer-social a:hover {
-      color: var(--text);
+      color: var(--color-text);
     }
-
   </style>
 </head>
 <body>
   <header>
-    <span class="brand">Locoste</span>
+    <span class="brand">LC Store</span>
   </header>
   <nav>
-            <a href="lauty_home.html">Inicio</a>
-            <a href="lauty_categoria.html">Productos</a>
-            <a href="lauty_ofertas.html">Sale</a>
-            <a href="curriculum.html">curriculum</a>
-            <a href="blog_personal.html">Blog</a>
-            <a href="lauty_preg_frec.html">Preguntas</a>
-            <a href="lauty_quienes.html">¿Quienes somos?</a>
-            <a href="lauty_login.html">Login</a>
-            <a href="curso.html">Curso</a>
+    <a href="lauty_home.html">Inicio</a>
+    <a href="lauty_categoria.html">Productos</a>
+    <a href="lauty_ofertas.html">Sale</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="blog_personal.html">Blog</a>
+    <a href="lauty_preg_frec.html">Preguntas</a>
+    <a href="lauty_quienes.html">¿Quienes somos?</a>
+    <a href="lauty_login.html">Login</a>
+    <a href="curso.html">Curso</a>
   </nav>
   <main>
     <h2>¿QUIÉNES SOMOS?</h2>
     <section class="about-section">
-      <p><span class="about-highlight">Locoste</span> surge gracias a la necesidad de pilchas y buena ropa en la ciudad de Salta, donde conseguir una prenda de calidad y de marcas especializadas en el área del streetwear y la moda tiene valores exorbitantes. Con esto damos accesibilidad a todos los que quieren tener una prenda de calidad sin gastar mucho dinero.</p>
+      <p><span class="about-highlight">LC Store</span> surge gracias a la necesidad de pilchas y buena ropa en la ciudad de Salta, donde conseguir una prenda de calidad y de marcas especializadas en el área del streetwear y la moda tiene valores exorbitantes. Con esto damos accesibilidad a todos los que quieren tener una prenda de calidad sin gastar mucho dinero.</p>
     </section>
     <section class="about-section">
       <p>Nuestra página nació de la pasión por la moda y la innovación digital, buscando acercar productos de calidad a precios accesibles, y brindar un espacio donde cada persona pueda encontrar su propio estilo.</p>
@@ -180,16 +178,16 @@
       </ul>
     </section>
     <section class="about-section" style="text-align:center;">
-      <i class="fas fa-heart about-highlight" aria-hidden="true"></i> Gracias por confiar en nosotros y ser parte de esta historia.
+      <span class="about-highlight">❤</span> Gracias por confiar en nosotros y ser parte de esta historia.
     </section>
   </main>
   <footer>
     <div class="footer-social">
-      <a href="https://www.instagram.com/lauut.c/" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://wa.me/3874856694" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/lauut.c/" title="Instagram">📷</a>
+      <a href="#" title="Facebook">📘</a>
+      <a href="https://wa.me/3874856694" title="WhatsApp">💬</a>
     </div>
-    © 2025 Locoste. Todos los derechos reservados.
+    <p>© 2025 LC Store. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>

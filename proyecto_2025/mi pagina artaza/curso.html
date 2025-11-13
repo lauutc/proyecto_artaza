@@ -6,41 +6,109 @@
 	<title>Cursos – Lautaro Corimayo</title>
 	<style>
 		:root {
-			--bg: #000000;
-			--card: #000000;
-			--ink: #ffffff;
-			--muted: #2c2b2b;
-			--accent: #ffffff;
+			--color-bg: #ffffff;
+			--color-surface: #000000;
+			--color-surface-light: #111111;
+			--color-text: #000000;
+			--color-text-light: #ffffff;
+			--color-text-muted: #666666;
+			--color-accent: #000000;
+			--spacing-xs: 0.5rem;
+			--spacing-sm: 1rem;
+			--spacing-md: 1.5rem;
+			--spacing-lg: 2rem;
+			--spacing-xl: 3rem;
+			--font-family: 'Segoe UI', Arial, sans-serif;
+			--font-size-base: 16px;
+			--border-radius: 8px;
 		}
-		* { box-sizing: border-box; }
+		* { box-sizing: border-box; margin: 0; padding: 0; }
 		body {
 			margin: 0;
-			font: 16px/1.6 'Segoe UI', Arial, sans-serif;
-			background: linear-gradient(135deg, #ffffff, #ffffff);
-			color: var(--ink);
+			font-family: var(--font-family);
+			font-size: var(--font-size-base);
+			line-height: 1.6;
+			background: var(--color-bg);
+			color: var(--color-text);
 		}
-		header.site {
-			text-align: center;
-			padding: 2rem 1rem;
-			background: var(--card);
-			position: sticky; top: 0; z-index: 100;
+		header {
+			background: var(--color-surface);
+			color: var(--color-text-light);
 		}
-		header.site h1 {
+		.topbar {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: var(--spacing-sm) var(--spacing-md);
+			flex-wrap: wrap;
+			gap: var(--spacing-sm);
+		}
+		.logo {
+			font-weight: 800;
+			font-size: 22px;
+			color: var(--color-text-light);
+		}
+		.search {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			background: var(--color-bg);
+			border-radius: 999px;
+			padding: 6px 12px;
+			max-width: 520px;
+			flex: 1;
+			min-width: 200px;
+		}
+		.search input {
+			border: none;
+			outline: none;
+			width: 100%;
+			font-size: var(--font-size-base);
+		}
+		.search button {
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			font-size: 1.2em;
+		}
+		nav.primary {
+			background: var(--color-surface-light);
+			padding: var(--spacing-xs) 0;
+		}
+		nav.primary ul {
+			list-style: none;
+			display: flex;
+			gap: 32px;
 			margin: 0;
-			font-size: 2rem;
-			color: var(--accent);
+			padding: 0;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
-		nav a {
-			color: - var(--bg); 
-			padding: .5rem 1rem;
-			border: 1px solid var(--bg);
+		nav.primary a {
+			color: var(--color-text-light);
+			text-decoration: none;
+			font-weight: bold;
+			padding: var(--spacing-xs) var(--spacing-sm);
+			border-radius: var(--border-radius);
+			transition: background 0.2s;
 		}
-		main { max-width: 1000px; margin: auto; padding: 2rem 1rem; display: grid; gap: 2rem; }
-		section#cursos { display: grid; gap: 2rem; }
+		nav.primary a:hover {
+			background: #222222;
+		}
+		header h1 {
+			text-align: center;
+			padding: var(--spacing-sm);
+			margin: 0;
+			font-size: 1.5rem;
+			color: var(--color-text-light);
+		}
+		main { max-width: 1000px; margin: auto; padding: var(--spacing-lg) var(--spacing-sm); display: grid; gap: var(--spacing-lg); }
+		section#cursos { display: grid; gap: var(--spacing-lg); }
 		.curso-block {
-			display: flex; align-items: center; gap: 2rem;
-			background-color: rgb(0, 0, 0);
-			padding: 1.5rem; border-radius: 16px;
+			display: flex; align-items: center; gap: var(--spacing-lg);
+			background-color: var(--color-bg);
+			border: 1px solid #eee;
+			padding: var(--spacing-md); border-radius: 16px;
 		}
 		.curso-block.left img { order: 0; }
 		.curso-block.left div { order: 1; }
@@ -51,31 +119,58 @@
 			border-radius: 20px;
 			object-fit: cover;
 		}
-		h2 { color: #000000}
-		h3 { color: #ffffff; }
+		h2 { color: var(--color-text); }
+		h3 { color: var(--color-text); }
+		.curso-block p { color: var(--color-text); }
 		footer.site {
 			text-align: center;
-			padding: 1rem;
-			color: #ffffff;
-			font-size: .9rem;
-			border-top: 1px solid #ffffff;
-			margin-top: 2rem;
-			background-color: #000000;
+			padding: var(--spacing-md);
+			color: var(--color-text-light);
+			font-size: 0.9rem;
+			margin-top: var(--spacing-lg);
+			background-color: var(--color-surface);
+		}
+		@media (max-width: 768px) {
+			.topbar {
+				flex-direction: column;
+				align-items: stretch;
+			}
+			.search {
+				max-width: 100%;
+			}
+			nav.primary ul {
+				gap: 16px;
+				font-size: 0.9rem;
+			}
+			.curso-block {
+				flex-direction: column;
+			}
 		}
 	</style>
 </head>
 <body>
-	<header class="site">
-		<h1>Cursos</h1>
-			<nav>
-				<a href="lauty_home.html" style="text-decoration: none;">Inicio</a>
-				<a href="lauty_categoria.html"style="text-decoration: none;">Productos</a>
-				<a href="lauty_ofertas.html"style="text-decoration: none;">Sale</a>
-				<a href="curriculum.html"style="text-decoration: none;">curriculum</a>
-				<a href="blog_personal.html"style="text-decoration: none;">Blog</a>
-				<a href="lauty_preg_frec.html"style="text-decoration: none;">Preguntas</a>
-				<a href="lauty_quienes.html"style="text-decoration: none;">¿Quienes somos?</a>
-			</nav>
+	<header>
+		<div class="topbar">
+			<div class="logo">LC</div>
+			<form class="search" action="#" method="get">
+				<input type="text" name="q" placeholder="Buscar productos..." />
+				<button type="submit" title="Buscar">🔍</button>
+			</form>
+		</div>
+		<nav class="primary" aria-label="Navegación principal">
+			<ul>
+				<li><a href="lauty_home.html">Inicio</a></li>
+				<li><a href="lauty_categoria.html">Productos</a></li>
+				<li><a href="lauty_ofertas.html">Sale</a></li>
+				<li><a href="curriculum.html">Curriculum</a></li>
+				<li><a href="blog_personal.html">Blog</a></li>
+				<li><a href="lauty_preg_frec.html">Preguntas</a></li>
+				<li><a href="lauty_quienes.html">¿Quienes somos?</a></li>
+				<li><a href="lauty_login.html">Login</a></li>
+				<li><a href="curso.html">Curso</a></li>
+			</ul>
+		</nav>
+		<h1>Curso</h1>
 	</header>
 
 	<main>
@@ -130,7 +225,7 @@
 
 
 	<footer class="site">
-			© 2025 LC Store. Todos los derechos reservados.
+		<p>© 2025 LC Store. Todos los derechos reservados.</p>
 	</footer>
 </body>
 </html>

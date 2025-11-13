@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crear cuenta | LC Store</title>
+  <title>Registro | LC Store</title>
   <style>
     :root {
       --color-bg: #ffffff;
@@ -202,35 +202,18 @@
         <li><a href="curso.html">Curso</a></li>
       </ul>
     </nav>
-    <h1>Crear cuenta</h1>
+    <h1>Registro</h1>
   </header>
   <form method="post" action="php/crear_cuenta.php">
     <h2>Crear cuenta</h2>
-    <?php
-    session_start();
-    if (isset($_SESSION['flash_errors'])) {
-      echo '<div style="background: #fee; color: #c00; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 0.9em;">';
-      foreach ($_SESSION['flash_errors'] as $error) {
-        echo '<p style="margin: 0 0 5px 0;">' . htmlspecialchars($error) . '</p>';
-      }
-      echo '</div>';
-      unset($_SESSION['flash_errors']);
-    }
-    if (isset($_SESSION['flash_success'])) {
-      echo '<div style="background: #efe; color: #060; padding: 10px; border-radius: 4px; margin-bottom: 15px; font-size: 0.9em;">';
-      echo '<p style="margin: 0;">' . htmlspecialchars($_SESSION['flash_success']) . '</p>';
-      echo '</div>';
-      unset($_SESSION['flash_success']);
-    }
-    ?>
-    <label for="full_name">Nombre</label>
+    <label for="full_name">Nombre completo</label>
     <input type="text" id="full_name" name="full_name" placeholder="ej: María Perez" required maxlength="120" />
     <label for="email">Email</label>
     <input type="email" id="email" name="email" placeholder="ej: tunombre@email.com" required maxlength="160" />
     <label for="password">Contraseña</label>
-    <input type="password" id="password" name="password" placeholder="Contraseña" required maxlength="50" />
+    <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required maxlength="50" />
     <label for="password2">Confirmar Contraseña</label>
-    <input type="password" id="password2" name="password2" placeholder="Confirmar Contraseña" required maxlength="50" />
+    <input type="password" id="password2" name="password2" placeholder="Repetir contraseña" required maxlength="50" />
     <button type="submit">CREAR CUENTA</button>
     <div class="alt">¿Ya tenés cuenta? <a href="lauty_login.html">Iniciá sesión</a></div>
   </form>
@@ -239,3 +222,4 @@
   </footer>
 </body>
 </html>
+

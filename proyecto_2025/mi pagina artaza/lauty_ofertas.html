@@ -1,58 +1,208 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
-  <title>Ofertas - LC Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ofertas | LC Store</title>
   <style>
     :root {
-      --black: #000;
-      --white: #fff;
-      --gray-1: #111;
-      --gray-2: #e9e9e9;
+      --color-bg: #ffffff;
+      --color-surface: #000000;
+      --color-surface-light: #111111;
+      --color-text: #000000;
+      --color-text-light: #ffffff;
+      --color-text-muted: #666666;
+      --color-accent: #000000;
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --font-family: 'Segoe UI', Arial, sans-serif;
+      --font-size-base: 16px;
+      --border-radius: 8px;
     }
-    body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #111; }
-    header { background: var(--black); color: var(--white); }
-    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
-    .logo { font-weight: 800; font-size: 22px; }
-    .search { display: flex; align-items: center; gap: 8px; background: var(--white); border-radius: 999px; padding: 6px 12px; width: 520px; }
-    .search input { border: none; outline: none; width: 100%; }
-    .search button { background: transparent; border: none; cursor: pointer; }
-    nav.primary { background: var(--gray-1); }
-    nav.primary ul { list-style: none; display: flex; gap: 40px; margin: 0; padding: 8px 30px; justify-content: center; }
-    nav.primary a { color: var(--white); text-decoration: none; }
-    h2 { text-align: center; font-size: 1.2em; margin: 30px 0 20px; }
-    .products { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 18px; justify-content: center; }
-    .product { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 12px; text-align: center; width: 220px; }
-    .product img { width: 100%; border-radius: 4px; }
-    .badge { display: block; background: #ff0000; color: #fff; padding: 2px 6px; border-radius: 3px; font-size: 12px; font-weight: 700; margin-bottom: 6px; }
-    .price { margin-top: 6px; }
-    .price .old { color: #777; text-decoration: line-through; font-size: 13px; margin-right: 6px; }
-    .price .current { color: #111; font-weight: 700; }
-    footer { background: #000; color: #fff; text-align: center; padding: 14px 16px; margin-top: 40px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+    header {
+      background: var(--color-surface);
+      color: var(--color-text-light);
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-sm) var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--color-text-light);
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-bg);
+      border-radius: 999px;
+      padding: 6px 12px;
+      max-width: 520px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: var(--font-size-base);
+    }
+    .search button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    nav.primary {
+      background: var(--color-surface-light);
+      padding: var(--spacing-xs) 0;
+    }
+    nav.primary ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav.primary a {
+      color: var(--color-text-light);
+      text-decoration: none;
+      font-weight: bold;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--border-radius);
+      transition: background 0.2s;
+    }
+    nav.primary a:hover {
+      background: #222222;
+    }
+    header h1 {
+      text-align: center;
+      padding: var(--spacing-sm);
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--color-text-light);
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.2em;
+      margin: 30px 0 20px;
+    }
+    .products {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      padding: var(--spacing-md);
+    }
+    .product {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: var(--border-radius);
+      padding: 12px;
+      text-align: center;
+      width: 220px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .badge {
+      display: block;
+      background: #ff0000;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .price {
+      margin-top: 6px;
+    }
+    .price .old {
+      color: #777;
+      text-decoration: line-through;
+      font-size: 13px;
+      margin-right: 6px;
+    }
+    .price .current {
+      color: #111;
+      font-weight: 700;
+    }
+    footer {
+      background: var(--color-surface);
+      color: var(--color-text-light);
+      text-align: center;
+      padding: var(--spacing-md);
+      margin-top: var(--spacing-lg);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search {
+        max-width: 100%;
+      }
+      nav.primary ul {
+        gap: 16px;
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="topbar">
       <div class="logo">LC</div>
+      <form class="search" action="#" method="get">
+        <input type="text" name="q" placeholder="Buscar productos..." />
+        <button type="submit" title="Buscar">🔍</button>
+      </form>
     </div>
     <nav class="primary" aria-label="Navegación principal">
-      <ul style="list-style: none; display: flex; gap: 32px; margin: 0; padding: 0; justify-content: center;">
-        <li style="font-weight: bold; display: flex; gap: 32px;">
-          <a href="lauty_home.html">Inicio</a>
-          <a href="lauty_categoria.html">Productos</a>
-          <a href="lauty_ofertas.html">Sale</a>
-          <a href="curriculum.html">curriculum</a>
-          <a href="blog_personal.html">Blog</a>
-          <a href="lauty_preg_frec.html">Preguntas</a>
-          <a href="lauty_quienes.html">¿Quienes somos?</a>
-          <a href="lauty_login.html">Login</a>
-          <a href="curso.html">Curso</a>
-        </li>
+      <ul>
+        <li><a href="lauty_home.html">Inicio</a></li>
+        <li><a href="lauty_categoria.html">Productos</a></li>
+        <li><a href="lauty_ofertas.html">Sale</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="blog_personal.html">Blog</a></li>
+        <li><a href="lauty_preg_frec.html">Preguntas</a></li>
+        <li><a href="lauty_quienes.html">¿Quienes somos?</a></li>
+        <li><a href="lauty_login.html">Login</a></li>
+        <li><a href="curso.html">Curso</a></li>
       </ul>
     </nav>
+    <h1>Ofertas</h1>
   </header>
-  <h2>Ofertas</h2>
   <div class="products">
     <div class="product">
       <span class="badge">40% OFF</span>
@@ -87,12 +237,12 @@
     <div class="product">
       <span class="badge">10% OFF</span>
       <img src="https://th.bing.com/th/id/OIP.HtBzJPq02RWWb_9QzrfA-wHaHa?w=202&h=202&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Accesorio oferta" />
-      <h4>parras de motocross</h4>
+      <h4>Parras de motocross</h4>
       <div class="price"><span class="old">$19.900</span><span class="current">$17.910</span></div>
     </div>
   </div>
   <footer>
-    © 2025 LC Store. Todos los derechos reservados.
+    <p>© 2025 LC Store. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>

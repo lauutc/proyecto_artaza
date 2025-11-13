@@ -1,0 +1,33 @@
+# Configuración para procesar archivos PHP
+AddType application/x-httpd-php .php
+AddType application/x-httpd-php .html
+
+# Habilitar procesamiento de PHP
+<IfModule mod_php7.c>
+  AddType application/x-httpd-php .php
+</IfModule>
+<IfModule mod_php8.c>
+  AddType application/x-httpd-php .php
+</IfModule>
+
+# Prevenir descarga de archivos PHP
+<FilesMatch "\.php$">
+  SetHandler application/x-httpd-php
+</FilesMatch>
+
+# Permitir métodos HTTP
+<Limit GET POST>
+  Require all granted
+</Limit>
+
+# Configuración de charset
+AddDefaultCharset UTF-8
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Habilitar rewrite engine si está disponible
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
+
