@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cursos – Lautaro Corimayo</title>
+	<style>
+		:root {
+			--bg: #000000;
+			--card: #000000;
+			--ink: #ffffff;
+			--muted: #2c2b2b;
+			--accent: #ffffff;
+		}
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			font: 16px/1.6 'Segoe UI', Arial, sans-serif;
+			background: linear-gradient(135deg, #ffffff, #ffffff);
+			color: var(--ink);
+		}
+		header.site {
+			text-align: center;
+			padding: 2rem 1rem;
+			background: var(--card);
+			position: sticky; top: 0; z-index: 100;
+		}
+		header.site h1 {
+			margin: 0;
+			font-size: 2rem;
+			color: var(--accent);
+		}
+		nav a {
+			color: - var(--bg); 
+			padding: .5rem 1rem;
+			border: 1px solid var(--bg);
+		}
+		main { max-width: 1000px; margin: auto; padding: 2rem 1rem; display: grid; gap: 2rem; }
+		section#cursos { display: grid; gap: 2rem; }
+		.curso-block {
+			display: flex; align-items: center; gap: 2rem;
+			background-color: rgb(0, 0, 0);
+			padding: 1.5rem; border-radius: 16px;
+		}
+		.curso-block.left img { order: 0; }
+		.curso-block.left div { order: 1; }
+		.curso-block.right div { order: 0; }
+		.curso-block.right img { order: 6; }
+		.curso-block img {
+			width: 220px;
+			border-radius: 20px;
+			object-fit: cover;
+		}
+		h2 { color: #000000}
+		h3 { color: #ffffff; }
+		footer.site {
+			text-align: center;
+			padding: 1rem;
+			color: #ffffff;
+			font-size: .9rem;
+			border-top: 1px solid #ffffff;
+			margin-top: 2rem;
+			background-color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<header class="site">
+		<h1>Cursos</h1>
+			<nav>
+				<a href="lauty_home.html" style="text-decoration: none;">Inicio</a>
+				<a href="lauty_categoria.html"style="text-decoration: none;">Productos</a>
+				<a href="lauty_ofertas.html"style="text-decoration: none;">Sale</a>
+				<a href="curriculum.html"style="text-decoration: none;">curriculum</a>
+				<a href="blog_personal.html"style="text-decoration: none;">Blog</a>
+				<a href="lauty_preg_frec.html"style="text-decoration: none;">Preguntas</a>
+				<a href="lauty_quienes.html"style="text-decoration: none;">¿Quienes somos?</a>
+			</nav>
+	</header>
+
+	<main>
+		<section id="cursos">
+			<article class="curso-block left">
+				<div>
+					<h3>Introducción al curso</h3>
+					<p>Vender ropa por internet en Argentina se ha convertido en una gran oportunidad. Cada vez más jóvenes prefieren comprar desde el celular, buscando comodidad, mejores precios y marcas que se adapten a su estilo. Sin embargo, no alcanza con tener una tienda online: es necesario aprender a mostrar los productos de forma atractiva, saber cómo llegar al público correcto, definir precios estratégicos y estar atentos a las tendencias de la moda juvenil.<br>
+					En este curso vamos a recorrer todos estos aspectos de manera clara y práctica, para que puedas aplicar lo aprendido a tu negocio.</p>
+				</div>
+			</article>
+			<article class="curso-block left">
+				<div>
+					<h3>Cómo usar tu página web de ropa</h3>
+					<p>La primera impresión es clave. Una tienda online debe ser atractiva, clara y fácil de navegar. Las fotos deben ser de buena calidad, mostrando las prendas en distintos ángulos y, si es posible, en modelos reales. Las descripciones no tienen que ser largas, pero sí útiles: talle, medidas, colores disponibles y material de la prenda.<br>
+					Además, es esencial configurar métodos de pago seguros y prácticos, como MercadoPago, tarjetas y transferencias, así como opciones de envío rápidas. Mostrar claramente la política de cambios y devoluciones genera confianza, algo decisivo en la moda.</p>
+				</div>
+			</article>
+			<article class="curso-block right">
+				<div>
+					<h3>Cómo obtener más ventas</h3>
+					<p>No alcanza con subir productos, hay que atraer tráfico y convertir visitas en compras. Para lograrlo, el marketing digital es tu mejor aliado. Instagram y TikTok son las plataformas preferidas de los jóvenes, por lo que allí debe estar tu marca. Publicar contenido original, sumarse a trends y mostrar la ropa en situaciones cotidianas ayuda a conectar. También es recomendable invertir en anuncios pagos segmentados, que permiten llegar a personas que realmente buscan moda.<br>
+					El contacto directo con clientes se puede mantener con WhatsApp Business y correos electrónicos, ofreciendo descuentos exclusivos o recordando novedades.</p>
+				</div>
+			</article>
+			<article class="curso-block left">
+				<div>
+					<h3>Cómo atraer al público joven</h3>
+					<p>Los jóvenes en Argentina no solo buscan ropa, buscan identificarse con una marca. Para llegar a ellos, tenés que hablar su mismo idioma: usar redes sociales dinámicas, tener una estética definida y, sobre todo, mostrar autenticidad. Una estrategia efectiva es trabajar con microinfluencers locales, que suelen tener más cercanía con su público. También es útil generar comunidad: responder comentarios, repostear fotos de clientes y crear desafíos o sorteos que generen interacción.</p>
+				</div>
+			</article>
+			<article class="curso-block right">
+				<div>
+					<h3>Elegir bien los precios</h3>
+					<p>Definir precios en moda es un arte y una ciencia. Deben cubrir tus costos (producción, compra al mayorista, envíos) y dejar un margen de ganancia, pero al mismo tiempo no pueden alejar a tu público objetivo. Una técnica efectiva es usar precios psicológicos, como $4.999 en lugar de $5.000. Además, se pueden ofrecer promociones 2x1, descuentos en la segunda prenda o envíos gratis a partir de cierto monto. Es clave encontrar un balance: no competir solo por precio, sino por valor percibido.</p>
+				</div>
+			</article>
+			<article class="curso-block left">
+				<div>
+					<h3>Tendencias de moda joven en Argentina</h3>
+					<p>En 2025, la moda juvenil está marcada por lo urbano, lo cómodo y lo versátil. Los estilos oversize, Y2K (inspirado en los años 2000) y el vintage siguen dominando. Los pantalones cargo, los buzos amplios y las remeras estampadas son los favoritos, acompañados de zapatillas urbanas de marcas como Nike, Adidas y Puma. Los accesorios, como gorras, cadenas y riñoneras, también son protagonistas.<br>
+					Los colores en tendencia incluyen gamas neutras como beige y gris, combinadas con tonos fuertes como verde lima, fucsia y celeste. Para no quedarse atrás, es importante seguir referentes de moda en redes sociales, observar qué usan los artistas más escuchados por los jóvenes y estar atentos a ferias de moda locales.</p>
+				</div>
+			</article>
+			<article class="curso-block right">
+				<div>
+					<h3>Escalar tu negocio</h3>
+					<p>Una vez que las ventas empiezan a crecer, es momento de organizar el negocio. Llevar un control del stock, usar sistemas de gestión de envíos y mantener un calendario de publicaciones ayuda a profesionalizar la marca. Otro paso importante es construir una identidad propia: pasar de revender ropa a crear diseños propios o colecciones exclusivas. Esto no solo aumenta el margen de ganancia, sino que genera un sentido de pertenencia en los clientes.</p>
+				</div>
+			</article>
+		</section>
+
+
+	<footer class="site">
+			© 2025 LC Store. Todos los derechos reservados.
+	</footer>
+</body>
+</html>

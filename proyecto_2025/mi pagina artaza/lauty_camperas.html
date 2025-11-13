@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Camperas - LC Store</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; }
+      .navbar { background: #000; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
+      .navbar-left { display: flex; align-items: center; gap: 30px; }
+      .logo { font-weight: 700; font-size: 22px; }
+      .search-box { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 999px; padding: 6px 12px; width: 520px; }
+      .search-box input { border: none; outline: none; width: 100%; }
+      .search-box button { background: transparent; border: none; cursor: pointer; }
+      .navbar-right { display: flex; align-items: center; gap: 20px; }
+      .nav-icon { display: flex; flex-direction: column; align-items: center; font-size: 12px; }
+      .nav-icon i { font-size: 16px; margin-bottom: 2px; }
+      .secondary-nav { background: #111; color: #fff; }
+      .secondary-nav ul { list-style: none; margin: 0; padding: 10px 30px; display: flex; gap: 20px; }
+      .secondary-nav a { color: #fff; text-decoration: none; }
+      .container { padding: 0 30px; }
+      .breadcrumb { margin: 12px 0 10px; font-size: 14px; color: #444; }
+      .breadcrumb ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
+      .breadcrumb li + li::before { content: ">"; color: #777; margin: 0 4px; }
+      .main { display: flex; }
+      .sidebar { width: 280px; background: #fff; padding: 20px; border-right: 1px solid #ddd; }
+      .sidebar .title { font-weight: 600; margin-bottom: 8px; }
+      .products { flex: 1; background: #fff; padding: 30px; display: grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap: 30px; }
+      .product { background: #f1f1f1; border-radius: 10px; padding: 15px; text-align: center; position: relative; }
+      .product img { width: 100%; border-radius: 8px; }
+      .price { display: flex; gap: 8px; justify-content: center; align-items: baseline; margin-top: 6px; }
+      .price .old { color: #777; text-decoration: line-through; font-size: 13px; }
+      .price .current { color: #111; font-weight: 700; }
+      .actions { margin-top: 10px; display: flex; gap: 8px; justify-content: center; }
+      .color-swatch { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #ccc; margin: 0 auto; }
+      .badge { position: absolute; top: 10px; left: 10px; background: #ff0000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+      /* Filtros específicos */
+      .filter-section { margin-bottom: 20px; }
+      .filter-section h4 { margin: 0 0 10px 0; font-size: 14px; }
+      .size-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+      .size-btn { padding: 6px 12px; border: 1px solid #000; background: #fff; border-radius: 4px; cursor: pointer; font-size: 12px; }
+      .size-btn.selected { background: #000; color: #fff; }
+      .color-options { display: grid; gap: 8px; }
+      .color-option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+      .color-option input[type="checkbox"] { margin: 0; }
+      footer { margin-top: 20px; background: #000; color: #fff; text-align: center; padding: 16px 20px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <div class="logo">LC</div>
+          <form class="search-box" action="#" method="get">
+            <input type="text" name="q" placeholder="¿Qué estás buscando?" />
+            <button type="submit">🔍</button>
+          </form>
+        </div>
+        <nav class="navbar-right" aria-label="Accesos rápidos">
+          <div class="nav-icon">
+            <i>💬</i>
+            <span>Ayuda</span>
+          </div>
+          <div class="nav-icon">
+            <i>👤</i>
+            <span>Mi cuenta</span>
+          </div>
+          <div class="nav-icon">
+            <i>🛒</i>
+            <span>Mi carrito</span>
+          </div>
+        </nav>
+      </div>
+      <nav class="secondary-nav" aria-label="Navegación principal">
+        <ul>
+        <a href="lauty_home.html">Inicio</a>  
+       <a href="lauty_categoria.html">Productos</a>
+        <a href="lauty_ofertas.html">Sale</a>
+        <a href="curriculum.html">curriculum</a>
+        <a href="blog_personal.html">Blog</a>
+        <a href="lauty_preg_frec.html">Preguntas</a>
+        <a href="lauty_quienes.html">¿Quienes somos?</a>
+        <a href="curso.html">Curso</a> 
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="sidebar">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+        </nav>
+        <div class="filter-section">
+          <h4>Filtrar por</h4>
+          <div class="filter-section">
+            <h4>Tipo</h4>
+            <div class="color-options">
+              <label class="color-option">
+                <input type="checkbox" name="type[]" value="rompeviento" />
+                <span>Rompeviento</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="type[]" value="puffer" />
+                <span>Puffer</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="type[]" value="plush" />
+                <span>Plush</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="type[]" value="oversize" />
+                <span>Oversize</span>
+              </label>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4>Color</h4>
+            <div class="color-options">
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="negro" />
+                <span>Negro</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="gris" />
+                <span>Gris</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="blanco" />
+                <span>Blanco</span>
+              </label>
+              <label class="color-option">
+                <input type="checkbox" name="color[]" value="marron" />
+                <span>Marrón</span>
+              </label>
+            </div>
+          </div>
+          <div class="filter-section">
+            <h4>Rango de precio</h4>
+            <div style="margin-top: 8px;">
+              <input type="range" min="0" max="150000" style="width: 100%;" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="flex:1;">
+        <div class="products">
+          <div class="product">
+            <div class="badge">30% OFF</div>
+            <img src="https://th.bing.com/th/id/OIP.rPF5nPZJItOrWWxoXnflUwHaJ4?w=202&h=269&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Campera rompeviento" />
+            <h4>Campera Rompeviento</h4>
+            <div class="color-swatch" style="background: #000;"></div>
+            <div class="price"><div class="old">$89.900</div><div class="current">$62.930</div></div>
+          </div>
+          <div class="product">
+            <img src="data:image/webp;base64,UklGRhowAABXRUJQVlA4IA4wAADwswCdASreACcBPp1CmEmlo6IorFfdARATiWknAt1nAHoELbLHLR3k98vsVP0j3zNri6H8r4If2/+YZ7eyv92zQcA/eKzaPr6ge/6vC1/Kf+f2B/zx6yfeD/ff/D7Bnl4f///7/BD92P/t/1/h1/cMhv5Z+j7oTTejWTreANMv3PdhR887a5d9RNl5v0m1R4Cy8CsgC1rJ7rTc6RgsL4EQos1+pkHhWUXfPHLxGSFXxMni6MhUgAumvQ+QbIXTDjeyRhhmaKvjOz9lFJ9RvcpZ0/4gzjVsiQL8p+mXrPcVxsBo3C14ypNAncnRhQhWorhPRJh+ym2bjCq8HYWdQ78xXSZeOGIYvrXxEdPEy+BIjL2vAPXS5770Tap4eT4WrJTmpr6zXeIzyNcpmPD3bFwx6rN4JZ9K9WedRB8P1++BfSa9Zf4+rmW7hRLL+gR0npw6VhAE8vNQ7F3V/i1AZGMKgoItyasR5y+D4o8VJXUke0vrM24Yttp3bovIL9K7zujdDdcja4nOcRdo7prEcom1RBl9lfFUZAgEIK2i6V9kWY59jAgaUtseIdKoXsJ6lEGQxaoepTt1Qjrxno4aKY4bevkpSJKQlL37pD9ihhKfTIT/1znjeNZsQr+zndojKALW5Cyg2hA4FjIIV47qkRqqT9p06Pa61zWrQkTyKqX9+rD7Ew/ww0lP//CN4ZcWG18dRX21HVx4Qnu6lUErelLdWWf49VyoYxzKq7M36XOMm/HxMNiAzcL1rWf0Nu1uiEH4LHTm5Olb0QgDJDOO2B6JaFAn5lDq/tAi8TqU0B1m7mFKjXjCCpiFZ2bj7vFg7EZ55eDYwZpMsRiOwZdsIynTBzG5/QOyWcMd7cjguB5SXMhs/LLDOpYxNzsOAGD6" alt="Campera puffer" />
+            <h4>Campera Puffer</h4>
+            <div class="color-swatch" style="background: #8B4513;"></div>
+            <div class="price"><div class="current">$79.900</div></div>
+          </div>
+          <div class="product">
+            <div class="badge">Sin stock</div>
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Campera plush" />
+            <h4>Campera Plush</h4>
+            <div class="color-swatch" style="background: #808080;"></div>
+            <div class="price"><div class="current">$69.900</div></div>
+          </div>
+          <div class="product">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Campera corta" />
+            <h4>Campera Corta</h4>
+            <div class="color-swatch" style="background: #000;"></div>
+            <div class="price"><div class="current">$72.500</div></div>
+          </div>
+          <div class="product">
+            <div class="badge">40% OFF</div>
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Campera oversize" />
+            <h4>Campera Oversize</h4>
+            <div class="color-swatch" style="background: #8B4513;"></div>
+            <div class="price"><div class="old">$99.900</div><div class="current">$59.940</div></div>
+          </div>
+          <div class="product">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Campera técnica" />
+            <h4>Campera Técnica</h4>
+            <div class="color-swatch" style="background: #0066cc;"></div>
+            <div class="price"><div class="current">$88.000</div></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      © 2025 LC Store. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog Personal – Lautaro Corimayo</title>
+  <style>
+    :root {
+      --bg: #000000;
+      --card: #000000;
+      --ink: #ffffff;
+      --muted: #2c2b2b;
+      --accent: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.6 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffffff, #ffffff);
+      color: var(--ink);
+    }
+    header.site {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--card);
+      position: sticky; top: 0; z-index: 100;
+    }
+    header.site h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    nav a {
+      color: - var(--bg); 
+      padding: .5rem 1rem;
+      border: 1px solid var(--bg);
+    }
+
+    main { max-width: 1000px; margin: auto; padding: 2rem 1rem; display: grid; gap: 2rem; }
+
+    section#sobre-mi { display: grid; gap: 2rem; }
+    .about-block {
+      display: flex; align-items: center; gap: 2rem;
+      background-color: rgb(0, 0, 0);
+      padding: 1.5rem; border-radius: 16px;
+    }
+    .about-block.left img { order: 0; }
+    .about-block.left div { order: 1; }
+    .about-block.right div { order: 0; }
+    .about-block.right img { order: 6; }
+    .about-block img {
+      width: 280px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    h2 { color: #000000}
+    h3 { color: #ffffff; }
+
+    footer.site {
+      text-align: center;
+      padding: 1rem;
+      color: #ffffff;
+      font-size: .9rem;
+      border-top: 1px solid #ffffff;
+      margin-top: 2rem;
+      background-color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <h1>Blog Personal – Lautaro Corimayo</h1>
+      <nav>
+        <a href="lauty_home.html">Inicio</a>
+        <a href="lauty_categoria.html">Productos</a>
+        <a href="lauty_ofertas.html">Sale</a>
+        <a href="curriculum.html">curriculum</a>
+        <a href="blog_personal.html">Blog</a>
+        <a href="lauty_preg_frec.html">Preguntas</a>
+        <a href="lauty_quienes.html">¿Quienes somos?</a>
+
+  </nav>
+  </header>
+
+  <main>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <article class="about-block left">
+        <img src="imagenes_pag.art/lau1.jpeg" alt="Foto de Lautaro Corimayo" />
+        <div>
+          <h3>Presentación</h3>
+          <p>Hola, soy <strong>Lautaro Corimayo</strong>, tengo 18 años y nací el 5 de diciembre de 2006 en la ciudad de Salta. Vivo en Barrio La Loma junto a mi madre y actualmente estudio en la <em>Escuela Técnica N.º 3139 “General Martín Miguel de Güemes”</em>, con la meta de convertirme en arquitecto cuando termine la secundaria.</p>
+        </div>
+      </article>
+
+      <article class="about-block right">
+        <div>
+          <h3>Sociabilidad</h3>
+          <p>Me considero una persona sociable y abierta, aunque no tengo muchos amigos íntimos. Sí cuento con un gran círculo de conocidos en Salta. Disfruto estar rodeado de gente y compartir experiencias. Como salir de fiesta o juntarme a jugar algun deporte como basquet o futbol, tambien me gusta pasar el tiempo al aire libre como tomar mates o quizas pasar el rato hablando de la vida.</p>
+        </div>
+        <img src="imagenes_pag.art/lau2.jpeg" alt="Lautaro compartiendo con amigos" />
+      </article>
+
+      <article class="about-block left">
+        <img src="imagenes_pag.art/lau3.jpeg" alt="Lautaro practicando deporte" />
+        <div>
+          <h3>Deportes y hobbies</h3>
+          <p>En mis tiempos libres me gusta hacer de todo, pero sobre todo soy un fanático de los deportes. Los que más me apasionan y practico con frecuencia son el <strong>fútbol</strong> y el <strong>básquet</strong>, además de entrenar en el gimnasio. Aunque por el tiempo no suelo ir muy seguido al gym, tambien soy un chico que se considera ser atleta debido a mi contextura fisica. Suelo andar en bici y me encanta hacer actividad fisica siempre y cuando no involucre mi riesgo a lesion,</p>
+        </div>
+      </article>
+
+      <article class="about-block right">
+        <div>
+          <h3>Moda y estilo</h3>
+          <p>Soy un amante de la <strong>moda masculina</strong> y de las tendencias que se ponen en Argentina. Me identifico con estilos como el oversize o la ropa boxy, y soy fan de las zapatillas en todos los modelos. Sigo a creadores de contenido para inspirarme en mis próximos outfits y me encanta vestirme con estilo. Siento que mi mundo seria la moda como tambien los sneakers que me fascinan y cuando tenga el suficiente capital comprarme cada oar de zapatillas para el uso y la coleccion, En la moda soy algo quizquillozo como el no ser igual a los demas y tener mi estilo unico.</p>
+        </div>
+        <img src="imagenes_pag.art/lau4.jpeg" alt="Lautaro mostrando su estilo de moda" />
+      </article>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería</h2>
+      <p>Aquí podés mostrar tus fotos favoritas o momentos importantes:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem;">
+        <img src="imagenes_pag.art/lau5.jpeg" alt="Foto 1" style="width:100%; border-radius:12px; object-fit:cover;">
+        <img src="imagenes_pag.art/lau6.jpeg" alt="Foto 2" style="width:100%; border-radius:12px; object-fit:cover;">
+        <img src="imagenes_pag.art/lau8.jpeg" alt="Foto 3" style="width:100%; border-radius:12px; object-fit:cover;">
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Podés escribirme a: <a href="mailto:lautargab@gmail.com">lautargab@gmail.com</a></p>
+      <p>Seguime en Instagram: <a href="https://www.instagram.com/lauut.c/" target="_blank">@lauut.c</a></p>
+    </section>
+  </main>
+
+  <footer class="site">
+      © 2025 LC Store. Todos los derechos reservados.
+  </footer>
+</body>
+</html>

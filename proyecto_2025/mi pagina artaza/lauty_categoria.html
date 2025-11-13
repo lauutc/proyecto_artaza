@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Productos - LC Store</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #f7f7f7; color: #111; }
+      .navbar { background: #000; color: #fff; display: flex; align-items: center; justify-content: space-between; padding: 10px 30px; }
+      .navbar-left { display: flex; align-items: center; gap: 30px; }
+      .logo { font-weight: 700; font-size: 22px; }
+      .search-box { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 999px; padding: 6px 12px; width: 520px; }
+      .search-box input { border: none; outline: none; width: 100%; }
+      .search-box button { background: transparent; border: none; cursor: pointer; }
+      .navbar-right { display: flex; align-items: center; gap: 20px; }
+      .nav-icon { display: flex; flex-direction: column; align-items: center; font-size: 12px; }
+      .nav-icon i { font-size: 16px; margin-bottom: 2px; }
+      .secondary-nav { background: #111; color: #fff; }
+      .secondary-nav ul { list-style: none; margin: 0; padding: 10px 30px; display: flex; gap: 20px; }
+      .secondary-nav a { color: #fff; text-decoration: none; }
+
+      main { display: grid; grid-template-columns: 280px 1fr; gap: 0; }
+      aside.sidebar { background: #fff; padding: 24px; border-right: 1px solid #ddd; }
+      section.content { background: #fff; padding: 30px; }
+
+      .breadcrumb { margin: 12px 0 16px; font-size: 14px; color: #444; }
+      .breadcrumb ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 8px; }
+      .breadcrumb li + li::before { content: ">"; color: #777; margin: 0 4px; }
+      .toolbar { display: flex; justify-content: flex-end; }
+      .toolbar form select { padding: 8px 10px; border: 1px solid #ccc; border-radius: 8px; background: #fff; }
+
+      .title { font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+      .side-group { margin-bottom: 22px; }
+      .side-group h4 { margin: 0 0 10px 0; font-size: 14px; color: #333; }
+      .side-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+      .side-group a { color: #111; text-decoration: none; }
+      .filters .option { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+
+      .products { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 30px; margin-top: 18px; }
+      .product { background: #f1f1f1; border-radius: 10px; padding: 15px; text-align: center; }
+      .product img { width: 100%; border-radius: 8px; }
+      .badge { position: absolute; background: #ff0000; color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 4px; font-weight: 700; }
+      .price { margin-top: 6px; display: flex; gap: 8px; justify-content: center; align-items: baseline; }
+      .price .old { color: #777; text-decoration: line-through; font-size: 13px; }
+      .price .current { color: #111; font-weight: 700; }
+
+      footer { background:#000; color:#fff; text-align:center; padding:16px 20px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="navbar-left">
+          <div class="logo">LC</div>
+          <form class="search-box" action="#" method="get">
+            <input type="text" name="q" placeholder="¿Qué estás buscando?" />
+            <button type="submit">🔍</button>
+          </form>
+        </div>
+        <nav class="navbar-right" aria-label="Accesos rápidos">
+          <div class="nav-icon"><i>💬</i><span>Ayuda</span></div>
+          <div class="nav-icon"><i>👤</i><span>Mi cuenta</span></div>
+          <div class="nav-icon"><i>🛒</i><span>Mi carrito</span></div>
+        </nav>
+      </div>
+      <nav class="secondary-nav" aria-label="Navegación principal">
+        <ul>
+        <a href="lauty_home.html">Inicio</a>
+        <a href="lauty_categoria.html">Productos</a>
+        <a href="lauty_ofertas.html">Sale</a>
+        <a href="curriculum.html">curriculum</a>
+        <a href="blog_personal.html">Blog</a>
+        <a href="lauty_preg_frec.html">Preguntas</a>
+        <a href="lauty_quienes.html">¿Quienes somos?</a>
+        <a href="lauty_login.html">Login</a>
+        <a href="curso.html">Curso</a>
+        </ul>
+      </nav>
+      <hr />
+    </header>
+
+    <main>
+      <aside class="sidebar" aria-label="Categorías y filtros">
+        <div class="side-group">
+          <div class="title">Categorías</div>
+          <ul>
+            <li><a href="lauty_Remeras.html">Remeras</a></li>
+            <li><a href="lauuty_hoddies.html">Buzos / Hoodies</a></li>
+            <li><a href="lauty_accesorios.html">Accesorios</a></li>
+            <li><a href="lauty_jeanes.html">Jeans</a></li>
+            <li><a href="#">Cargos</a></li>
+            <li><a href="#">Bermudas</a></li>
+          </ul>
+        </div>
+        <div class="side-group filters">
+          <h4>Filtrar por</h4>
+          <div class="filters">
+            <div style="margin-bottom:10px;">
+              <div style="font-size:13px; color:#444; margin-bottom:6px;">Color</div>
+              <label class="option"><input type="checkbox" /> Negro</label>
+              <label class="option"><input type="checkbox" /> Blanco</label>
+              <label class="option"><input type="checkbox" /> Gris</label>
+            </div>
+            <div>
+              <div style="font-size:13px; color:#444; margin:8px 0 6px;">Rango de precio</div>
+              <input type="range" min="0" max="100000" style="width:100%;" />
+            </div>
+          </div>
+        </div>
+      </aside>
+      <section class="content" aria-label="Listado de productos">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <ul>
+            <li><a href="lauty_home.html">Inicio</a></li>
+            <li>Productos</li>
+          </ul>
+        </nav>
+        <div class="toolbar">
+          <form action="#" method="get">
+            <label for="orden" style="display:none;">Ordenar por</label>
+            <select id="orden" name="orden">
+              <option>Más vendidos</option>
+              <option>Más nuevo</option>
+              <option>Precio: Menor a Mayor</option>
+              <option>Precio: Mayor a Menor</option>
+            </select>
+          </form>
+        </div>
+
+        <div class="products">
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop" alt="Remera crema" />
+            <h4>Remera Demon Crema</h4>
+            <div class="price"><div class="old">$41.900</div><div class="current">$29.330,00</div></div>
+          </article>
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?q=80&w=800&auto=format&fit=crop" alt="Polo 71" />
+            <h4>Polo 71</h4>
+            <div class="price"><div class="current">$79.900,00</div></div>
+          </article>
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop" alt="Remera Moscú" />
+            <h4>Remera Moscú</h4>
+            <div class="price"><div class="old">$39.900</div><div class="current">$31.920,00</div></div>
+          </article>
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=800&auto=format&fit=crop" alt="Remera Star Negra" />
+            <h4>Remera Star Negra</h4>
+            <div class="price"><div class="old">$41.900</div><div class="current">$25.140,00</div></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2025 LC Store. Todos los derechos reservados.
+    </footer>
+  </body>
+</html>
